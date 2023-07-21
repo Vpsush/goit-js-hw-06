@@ -21,5 +21,5 @@ imgList.style.display = "flex";
 imgList.style.flexDirection = "column";
 imgList.style.gap = "72px";
 // imgList.style.list-style = "none";
-imgList.insertAdjacentHTML("beforeBegin", galleryList);
+imgList.insertAdjacentHTML("afterBegin", galleryList);
 console.log(galleryList);

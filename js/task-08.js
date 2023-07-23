@@ -1,19 +1,18 @@
+const form = document.querySelector(".login-form");
+form.addEventListener("submit", validateForm);
+
 function validateForm(event) {
   event.preventDefault();
+  const {
+    elements: { email, password },
+  } = event.currentTarget;
 
-  // Get the values of the email and password fields
-  const emailInput = document.getElementsByName("email")[0];
-  console.log(document.getElementsByName("email"));
-  const emailValue = emailInput.value;
-  const passwordInput = document.getElementsByName("password")[0];
-  const passwordValue = passwordInput.value;
-
-  if (emailValue === "" || passwordValue === "") {
+  if (email.value === "" || password.value === "") {
     alert("Please enter both email and password.");
   } else {
-    const obectForm = { emailValue, passwordValue };
-    console.log(obectForm);
+    const userDetails = { email: email.value, password: password.value };
+
+    console.log(userDetails);
+    event.currentTarget.reset();
   }
 }
-const form = document.querySelector(".login-form");
-form.onsubmit = validateForm;
